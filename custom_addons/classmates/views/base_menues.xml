@@ -1,0 +1,15 @@
+<!--view/base_menues.xml file-->
+<odoo>
+    <!--the first menu Architecture-->
+    <menuitem
+        id= "classmates_menu_root"
+        name= "Classmates"
+    />
+
+    <!--the second menu Architecture-->
+    <menuitem
+           id= "classmate_menu_root"
+           name= "Classmate 02 level"
+           parent= "classmates_menu_root"
+    />
+</odoo>

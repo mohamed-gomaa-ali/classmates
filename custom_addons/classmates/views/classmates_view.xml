@@ -1,0 +1,32 @@
+<!--views/classmates_view.xml file-->
+<odoo>
+    <record id = "classmates_view_tree" model="ir.ui.view">
+        <field name="name">Classmates Tree</field>
+        <field name="model">classmates</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="company"/>
+                <field name="working_date"/>
+                <field name="position"/>
+                <field name="image"/>
+                <field name="address"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="url"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="classmates_action" model="ir.actions.act_window">
+        <field name = "name">Table Data</field>
+        <field name = "res_model">classmates</field>
+    </record>
+
+    <menuitem
+        id = "classmates_menu_item"
+        name = "Classmates 03 level"
+        parent = "classmates_menu_root"
+        action  = "classmates_action"
+    />
+</odoo>
