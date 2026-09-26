@@ -20,6 +20,59 @@
         </field>
     </record>
 
+    <!--classmates form view-->
+    <record id = "classmates_view_form" model="ir.ui.view">
+        <field name="name">Classmates Form</field>
+        <field name="model">classmates</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class ="oe_title">
+                        <label for = "name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter your name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string = "Basic Info.">
+                            <field name="company" placeholder="company"/>
+                            <field name="position" placeholder="position"/>
+                            <field name="working_start_date" placeholder="working_start_date"/>
+                            <field name="working_end_date" placeholder="working_end_date"/>
+                        </group>
+                        <group string="Additional Info.">
+                            <field name="address" placeholder="address"/>
+                            <field name="phone" placeholder="phone"/>
+                            <field name="email" placeholder="email"/>
+                            <field name="url" placeholder="url"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--classmates search view-->
+    <record id = "classmates_view_search" model="ir.ui.view">
+        <field name="name">Classmates Search</field>
+        <field name="model">classmates</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="company"/>
+                <field name="position"/>
+
+                <!--filters to use it-->
+                <filter name="in_rondy" string="In Rondy" domain="[('company','=','rondy')]"/>
+                <filter name="is_Boss" string="Is Boss" domain="[('position','=','position2')]"/>
+
+                <!--groups to use it-->
+                <filter name="Group_by_Position" string="Group by Position" context="{'group_by':'position'}"/>
+            </search>
+        </field>
+    </record>
+
     <!--classmates action-->
     <record id="classmates_action" model="ir.actions.act_window">
         <field name = "name">Table Data</field>
