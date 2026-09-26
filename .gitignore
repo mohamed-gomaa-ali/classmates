@@ -13,6 +13,8 @@ odoo-18.0
 # C extensions
 *.so
 
+odoo.conf
+
 # Distribution / packaging
 .Python
 build/
