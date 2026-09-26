@@ -15,7 +15,7 @@ class Classmates(models.Model):
     )
     working_start_date = fields.Date(default=fields.Date.today())
     working_end_date = fields.Date(default=fields.Date.today())
-    image = fields.Image()
+    image = fields.Image(string="Photo")
     position = fields.Selection(
         [
             ("position1", "رئيس وردية"),
